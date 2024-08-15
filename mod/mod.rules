@@ -1,0 +1,73 @@
+ID = "st-afa.100_federation"
+Name = "ST-AFA - Federation"
+Version = 0.1.6
+Author = "ST-AFA Mod-Team"
+CompatibleGameVersions = ["0.27.0e"]
+ModifiesMultiplayer = true
+Logo = logo.png
+Description = "Adds STAR TREK stuff to the game \n\n"\
+              "<red>WARNING: This mod is a WIP and a development mod. Some things might be unbalanced or broken!</red> \n\n"\
+			  "- adds Weapons\n"\
+			  "- adds Engines\n"\
+			  "- adds Rooms\n"\
+			  "- adds Energy (WarpCore)\n"\
+			  "- adds shields\n"\
+			  "Requires STAR TREK - A FINAL ASSAULT RESOURCE MOD and STAR TREK - A FINAL ASSAULT BASE MOD"
+StringsFolder = "strings"
+
+
+Actions
+[
+	//******************** FUNCTIONS ********************
+
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/ships/priorities.rules>"
+		Overrides
+		{
+			CaptainsRoom_Supply = 10
+			CaptainsRoom_Crew = 10
+		}
+	}
+
+	//******************** TECHS ********************
+	{
+		Action = AddMany
+		AddTo = "<modes/career/techs.rules>/Techs"
+		ManyToAdd = &<fed_tech.rules>/Techs
+	}
+	
+	//******************** PARTS ********************
+	{
+		Action = AddMany
+		AddTo = "<ships/terran/terran.rules>/terran/parts"
+		ManyToAdd = &<parts/federation.rules>/Parts
+	}
+	//******************** SOUNDS ********************
+
+	//******************** RESOURCES ********************
+	//******************** UI ********************
+	{
+		Action = AddMany
+		AddTo = "<gui/game/parts/part_toggles.rules>/PartToggles"
+		ManyToAdd = &<gui/game/parts/part_toggles.rules>/PartToggles
+	}
+
+	{
+		Action = Add
+		AddTo = "<./Data/ships/base_ship.rules>/Blueprints/DrawProhibitedZoneCategories"
+		ToAdd = phaserbank
+	}
+
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/gui/game/indicators/indicators.rules>"
+		Overrides = &<gui/game/indicators/indicators.rules>
+	}
+	//******************** BUFFS ********************
+    {
+		Action = Overrides
+		OverrideIn = "<./Data/buffs/buffs.rules>"
+		Overrides = &<buffs/buffs.rules>
+	}
+]
