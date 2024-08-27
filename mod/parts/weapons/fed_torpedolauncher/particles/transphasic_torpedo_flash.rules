@@ -9,15 +9,7 @@ Def
 			Type = LocationToWorldSpace
 			LocationIn = location
 			LocationOut = location
-			Name = "Convert location to world space."
-			Enabled = true
-			UpdateAfterInit = false
-		}
-		{
-			Type = RotationToWorldSpace
-			RotationIn = rot
-			RotationOut = rot
-			Name = "Convert rotation to world space."
+			Name = "Location to world space"
 			Enabled = true
 			UpdateAfterInit = false
 		}
@@ -29,9 +21,9 @@ Def
 			UpdateAfterInit = false
 		}
 		{
-			Type = SetWorldSpaceScale
+			Type = ScaleToWorldSpace
+			ScaleIn = scale
 			ScaleOut = scale
-			LocalScale = 1
 			Name = ""
 			Enabled = true
 			UpdateAfterInit = false
@@ -42,7 +34,7 @@ Def
 		{
 			Type = Lifetime
 			LifeInOut = life
-			Lifetime = 0.5
+			Lifetime = 0.4
 			Name = Lifetime
 			Enabled = true
 			UpdateAfterInit = false
@@ -54,77 +46,84 @@ Def
 			BIn = velocity
 			ResultOut = location
 			Operator = AddDt
-			Name = "Apply velocity."
+			Name = "Apply velocity"
 			Enabled = true
 			UpdateAfterInit = false
 		}
 		{
-			Type = UvAnimation
-			TimeIn = life
-			UvRectOut = uv_rect
-			Framerate = 24
-			TextureSize
+			Type = Lerp
+			LerpIn = life
+			DataOut = color
+			Invert = false
+			ValueType = Color
+			FromValue
 			{
-				X = 512
-				Y = 512
+				Rf = 1
+				Gf = 1
+				Bf = 1
+				Af = 1
 			}
-			FrameSize
+			ToValue
 			{
-				X = 128
-				Y = 128
+				Rf = 1
+				Gf = 1
+				Bf = 1
+				Af = 0
 			}
-			FrameCount = 24
-			FramesPerRow = 4
-			PixelOffset
-			{
-				X = 0
-				Y = 0
-			}
-			Looping = false
-			Name = Animation
+			Name = "Alpha lerp"
+			Enabled = true
+			UpdateAfterInit = true
+		}
+		{
+			Type = Operator
+			DataType = Color
+			AIn = color
+			BIn = base_color
+			ResultOut = color
+			Operator = Multiply
+			Name = "Apply base color"
 			Enabled = true
 			UpdateAfterInit = true
 		}
 	]
 	Renderer
 	{
-		Type = StandardQuadRenderer
+		Type = LightQuadRenderer
 		LocationIn = location
 		ScaleIn = scale
 		Scale2In
-		RotationIn = rot
-		ColorIn
-		UvRectIn = uv_rect
+		RotationIn
+		ColorIn = color
+		UvRectIn
 		BaseSize
 		{
-			X = 3
-			Y = 3
+			X = 1
+			Y = 1
 		}
 		Name = ""
 	}
 	Material
 	{
+		Shader = ./Data/common_effects/particles/particle_light.shader
+		_z = 0.1
+		_litReflectiveStrength = 24
+		_litAdditiveStrength = 0.05
+		_unlitAdditiveStrength = 0.05
+
 		Texture
 		{
-			File = tricobalt_torpedo_shot.png
-			MipLevels = 8
+			File = ./Data/common_effects/particles/blob.png
+			MipLevels = max
 			SampleMode = Linear
 		}
 		TargetBlendMode
 		{
-			SourceRgbFactor = SourceAlpha
+			SourceRgbFactor = InverseDestColor
 			DestRgbFactor = One
 			RgbOperator = Add
-			SourceAlphaFactor = InverseDestAlpha
+			SourceAlphaFactor = Zero
 			DestAlphaFactor = One
 			AlphaOperator = Add
-		}
-		Color
-		{
-			Rf = 1
-			Gf = 1
-			Bf = 1
-			Af = 1.372549
 		}
 	}
 	DeleteMode = Fast
@@ -143,14 +142,25 @@ EmitterDef
 	[
 		{
 			Type = SetValue
-			DataOut = location
-			ValueType = Vector2
+			DataOut = base_color
+			ValueType = Color
 			Value
 			{
-				X = 0
-				Y = 0
+				Rf = 225
+				Gf = 194
+				Bf = 64
+				Af = 0.1
 			}
-			Name = "Init location"
+			Name = "Base color"
+			Enabled = true
+			UpdateAfterInit = false
+		}
+		{
+			Type = ScaleFromIntensity
+			ScaleOut = scale
+			ScaleFactor = 6
+			IntensityExponent = 0.5
+			Name = "Scale from intensity"
 			Enabled = true
 			UpdateAfterInit = false
 		}
@@ -161,13 +171,13 @@ Bucket = Upper1
 UseRealTime = false
 PenetratingBucket
 MinIntensity = 0
-IsFancy = false
+IsFancy = true
 IsFancyLight = false
 IsSimple = false
 Sharing = Global
 UnsharedRenderInWorldSpace = false
 DontEmitWhenOffScreen = true
-DontEmitWhenOffScreenSizeInflate = 1
+DontEmitWhenOffScreenSizeInflate = 5
 UseCustomShapeForOffScreenCheck = false
 MaxEmissionZoom = 3.4028235E+38
 ScaleEmissionWithIntensity = false

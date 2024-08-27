@@ -106,14 +106,14 @@ Def
 	{
 		Texture
 		{
-			File = tricobalt_torpedo_shot.png
+			File = transphasic_torpedo_shot.png
 			MipLevels = 8
 			SampleMode = Linear
 		}
 		TargetBlendMode
 		{
 			SourceRgbFactor = SourceAlpha
-			DestRgbFactor = One
+			DeswgbFactor = One
 			RgbOperator = Add
 			SourceAlphaFactor = InverseDestAlpha
 			DestAlphaFactor = One
