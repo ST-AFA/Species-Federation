@@ -25,8 +25,8 @@ Def
 		}
 		{
 			Type = AddFrameOfReference
-			VelocityInOut = velocity
 			Name = "Add frame of reference"
+			VelocityInOut = velocity
 			Enabled = true
 			UpdateAfterInit = false
 		}
@@ -60,7 +60,7 @@ Def
 		}
 		{
 			Type = Operator
-			DataType = Vector2
+			DataType = Vector2D
 			AIn = location
 			BIn = velocity
 			ResultOut = location
@@ -96,60 +96,39 @@ Def
 			Enabled = true
 			UpdateAfterInit = true
 		}
-		{
-			Type = ColorRamp
-			LerpIn = life
-			ColorOut = color
-			Invert = false
-			Colors
-			[
-				{
-					Rf = 1
-					Gf = 0.39215687
-					Bf = 0.39215687
-					Af = 0.78431374
-				}
-				{
-					Rf = 1
-					Gf = 1
-					Bf = 1
-					Af = 1
-				}
-				{
-					Rf = 1
-					Gf = 1
-					Bf = 1
-					Af = 0.78431374
-				}
-			]
-			Name = ""
-			Enabled = true
-			UpdateAfterInit = false
-		}
 	]
 	Renderer
 	{
 		Type = StandardQuadRenderer
 		LocationIn = location
 		ScaleIn = scale
-		Scale2In
 		RotationIn = rot
-		ColorIn = color
+		ColorIn
 		UvRectIn = uv_rect
 		BaseSize
 		{
-			X = 4
-			Y = 4
+			X = 2.5
+			Y = 2.5
 		}
+		MaxScale = 1
 		Name = ""
 	}
 	Material
 	{
 		Texture
 		{
-			File = quantum_torpedo_hit.png
+			File = transphasic_torpedo_hit.png
+			FixTransparentColors = false
+			PreMultiplyByAlpha = false
 			MipLevels = 8
 			SampleMode = Linear
+		}
+		Color
+		{
+			Rf = 1
+			Gf = 1
+			Bf = 1
+			Af = 0.7529412
 		}
 	}
 	DeleteMode = Fast
@@ -159,32 +138,26 @@ Def
 EmitterDef
 {
 	EmitPerSecond = 0
-	EmitPerOneShot
-	{
-		Min = 1
-		Max = 1
-	}
+	EmitPerOneShot = 1
 	PreInitializers[]
 	PostInitializers[]
 }
-Bucket = Lower2
-UseRealTime = false
+Bucket = Lower1
 PenetratingBucket = Middle2
 MinIntensity = 0
 IsFancy = false
-IsFancyLight = false
-IsSimple = false
 Sharing = Global
-UnsharedRenderInWorldSpace = false
 DontEmitWhenOffScreen = true
 DontEmitWhenOffScreenSizeInflate = 1
+Delay = 0
+IgnoreIntensity = false
+UnsharedRenderInWorldSpace = false
 UseCustomShapeForOffScreenCheck = false
 MaxEmissionZoom = 3.4028235E+38
 ScaleEmissionWithIntensity = false
 ScaleEmissionWithBeamLength = false
-ScaleEmissionWithWorldVelocity = false
-ScaleEmissionWithPartSize = false
-ScaleEmissionWithPartPhysicalSize = false
+UseRealTime = false
+IsSimple = false
 CaptureBackBuffer = false
 Filter
 {
@@ -197,8 +170,6 @@ Filter
 	Bullets = true
 	OnlyBulletCategories
 	ExcludeBulletCategories
-	Crew = true
-	Nuggets = true
 	IgnoreInvulnerability = true
 	Self
 	TargetedSelf
@@ -209,5 +180,3 @@ Filter
 	Junk = true
 	TargetedJunk
 }
-Delay = 0
-IgnoreIntensity = false
