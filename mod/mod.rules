@@ -1,6 +1,6 @@
 ID = "st-afa.100_federation"
-Name = "ST-AFA - Species: Federation"
-Version = 0.1.7
+Name = "ST-AFA - Federation"
+Version = 0.1.6
 Author = "ST-AFA Mod-Team"
 CompatibleGameVersions = ["0.27.0e"]
 ModifiesMultiplayer = true
@@ -28,6 +28,11 @@ Actions
 			CaptainsRoom_Supply = 10
 			CaptainsRoom_Crew = 10
 		}
+	}
+	{
+		Action = Replace
+		Replace = "<gui/menus.rules>/LogoShip"
+		With = &<gui/menus.rules>/LogoShip
 	}
 
 	//******************** TECHS ********************
