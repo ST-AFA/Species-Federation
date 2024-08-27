@@ -54,7 +54,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			ToggleID = "on_off"
 			Default = 1
 		}
-
+		
 		FireModeToggle
 		{
 			Type = UIToggle
@@ -67,7 +67,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			Mode = FireModeToggle
 			OnMode = 2
 		}
-
+		
 		//***********
 		FirePrefToggle
 		{
@@ -475,6 +475,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			File = "blueprints.png"
 			Size = [1, 3]
 		}
+
 	}
 
 	Stats
