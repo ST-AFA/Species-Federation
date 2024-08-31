@@ -28,13 +28,13 @@ Components
 	{
 		Type = Targetable
 		Health = 450
-		TargetCategory = "bullet"
+		TargetCategory = "laser"
 	}
 
 	DamagePool
 	{
 		Type = DamagePool
-		Damage = { BaseValue=600; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=1200; }
+		Damage = { BaseValue=3000; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=5000; }
 	}
 
 	Hit
@@ -104,7 +104,7 @@ Components
 			[
 				{
 					Type = Damage
-					Damage = { BaseValue=600; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=1200; }
+					Damage = { BaseValue=1800; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=3600; }
 				}
 				{
 					Type = Impulse;

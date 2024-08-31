@@ -12,7 +12,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		[coil2, 6]
 	]
 	TypeCategories = [weapon, uses_power, is_crewed]
-	ReceivableBuffs : ^/0/ReceivableBuffs [CaptainsRoomBuff, AntimatterPower]
+	ReceivableBuffs : ^/0/ReceivableBuffs [AntimatterPower,CaptainsRoomBuff]
 	Size = [2, 3]
 	PhysicalRect = [0, 1, 2, 2]
 	SaveRect = &PhysicalRect
@@ -87,18 +87,18 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		{
 			Type = ResourceStorage
 			ResourceType = battery
-			MaxResources = 2000
+			MaxResources = 10000
 			ReceiveResourceMediaEffects = &/COMMON_EFFECTS/PowerDeliver
 		}
-		BatteryConsumer
-		{
-			Type = ResourceConsumer
-			ResourceType = battery
-			Storage = BatteryStorage
-			DefaultPriority = &/PRIORITIES/Weapon_Supply
-			ResupplyThreshold = 0
-			OperationalToggle = PowerToggle
-		}
+		// BatteryConsumer
+		// {
+		// 	Type = ResourceConsumer
+		// 	ResourceType = battery
+		// 	Storage = BatteryStorage
+		// 	DefaultPriority = &/PRIORITIES/Weapon_Supply
+		// 	ResupplyThreshold = 0
+		// 	OperationalToggle = PowerToggle
+		// }
 
 		CrewLocation1
 		{
@@ -253,7 +253,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			AutoFireToggle = AutoFireToggle
 			//FireInterval = 2/30
 			FireInterval = 0.5
-			FiringArc = 45d
+			FiringArc = 25d
 			RotateSpeed = 360d
 			FireThresholdAngle = 1d
 			AIFirepowerRating = 300
@@ -305,10 +305,10 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			GetTargetFrom = Turret
 			Location = [.5, 0]
 			OperationalToggle = IsOperational
-			Spread = [-1.5d, 1.5d]
-			FireDelay = .2
+			Spread = [0.1d, 0.1d]
+			FireDelay = 0.01
 			Burst = 4
-			BurstDelay = 0.01
+			BurstDelay = 0.2
 			Bullet = &<../../../shots/phaser_dual_bolt/phaser_dual_bolt.rules>
 			ResourceStorage = BatteryStorage
 			ResourcesUsed = 2000
@@ -458,7 +458,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				// Out of power.
 				{
 					Toggle = BatteryStorage
-					Delay = &~/Part/Components/Turret/FireInterval
+					Delay = (&~/Part/Components/Turret/FireInterval) * 5
 					AtlasSprite
 					{
 						File = &/INDICATORS/NoPower
@@ -489,7 +489,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	Stats
 	{
 		CrewRequired = &~/Part/Components/PartCrew/Crew
-		PowerCapacity = (&~/Part/Components/BatteryStorage/MaxResources) / 1000
+		PowerCapacity = (&~/Part/Components/BatteryStorage/MaxResources) / 200
 
 		RecPower = &../StatsByCategory/0/Stats/PowerPerSecond
 		RecCrew = (&CrewRequired) + (&RecPower) * 4
@@ -513,7 +513,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				ShotHP = &~/Part/Components/BulletEmitter/Bullet/Components/Targetable/Health
 				PowerPerShot = (&~/Part/Components/BulletEmitter/ResourcesUsed) / 1000
 				PowerPerSecond = (&PowerPerShot) * (&ROF)
-				ShotPowerUsage = [&../PowerPerShot, &../PowerPerSecond]
+				ShotPowerUsage = [(&../PowerPerShot) / 5, &../PowerPerSecond]
 			}
 		}
 	]
