@@ -51,6 +51,20 @@ PartToggles
 					}
 				}
 			}
+			// Transphasic Torpedo.
+			{
+				ChoiceID = "torpedo_type_transphasic"
+				ButtonToolTipKey = "PartToggles/TorpedoType_transphasic"
+				ButtonSprite
+				{
+					Texture
+					{
+						File = "transphasic_torpedo.png"
+						MipLevels = 2
+						SampleMode = Linear
+					}
+				}
+			}
 		]
 	}
 	{
@@ -135,6 +149,21 @@ PartToggles
 					Texture
 					{
 						File = "tricobalt_torpedo.png"
+						MipLevels = 2
+						SampleMode = Linear
+					}
+				}
+			}
+
+			// Transphasic Torpedo.
+			{
+				ChoiceID = "torpedo_type_transphasic_ai"
+				ButtonToolTipKey = "PartToggles/TorpedoType_Transphasic"
+				ButtonSprite
+				{
+					Texture
+					{
+						File = "transphasic_torpedo.png"
 						MipLevels = 2
 						SampleMode = Linear
 					}
@@ -291,5 +320,115 @@ PartToggles
 			}
 		]
 
+	}
+		//Toggle Shield Visibility?
+	{
+		ToggleID = "shield_visibility"
+		Style = CycledButton
+		ShowWithShipCommands = true
+		//MultipleModesDisplayOrder = Last
+		//SortOrder = 1
+		Choices
+		[
+			{
+				ChoiceID = "shield_visibility_on"
+				ButtonToolTipKey = "PartToggles/Shield_Visibility_On"
+				Mode = 0
+				ButtonSprite
+				{
+					Texture
+					{
+						File = "ssmDisplayOn.png"
+						MipLevels = 2
+						SampleMode = Linear
+					}
+				}
+			}
+
+			{
+				ChoiceID = "shield_visibility_off"
+				ButtonToolTipKey = "PartToggles/Shield_Visibility_Off"
+				Mode = 1
+				ButtonSprite
+				{
+					Texture
+					{
+						File = "ssmDisplayOff.png"
+						MipLevels = 2
+						SampleMode = Linear
+					}
+				}
+			}
+		]
+	}
+
+	{
+		ToggleID = "fire_mode2"
+		Style = Popout
+		ShowWithShipCommands = true
+		//MultipleModesDisplayOrder = Last
+		//SortOrder = 1
+		Choices
+		[
+			{
+				ChoiceID = "cid_Sparky_test_fire_mode2_faw"
+				ButtonToolTipKey = "PartToggles/btt_Sparky_test_fire_mode2_faw"
+				Mode = 2
+				ButtonSprite
+				{
+					Texture
+					{
+						File = "toggle_fire_at_will.png"
+						MipLevels = 2
+						SampleMode = Linear
+					}
+				}
+			}
+
+			{
+				ChoiceID = "cid_Sparky_test_fire_mode2_hold"
+				ButtonToolTipKey = "PartToggles/btt_Sparky_test_fire_mode2_hold"
+				Mode = 0
+				ButtonSprite
+				{
+					Texture
+					{
+						File = "toggle_fire_hold.png"
+						MipLevels = 2
+						SampleMode = Linear
+					}
+				}
+			}
+
+			{
+				ChoiceID = "cid_Sparky_test_fire_mode2_auto"
+				ButtonToolTipKey = "PartToggles/btt_Sparky_test_fire_mode2_auto"
+				Mode = 3
+				ButtonSprite
+				{
+					Texture
+					{
+						File = "toggle_fire_auto.png"
+						MipLevels = 2
+						SampleMode = Linear
+					}
+				}
+			}
+
+			{
+				ChoiceID = "cid_Sparky_test_fire_mode2_FaTarg"
+				ButtonToolTipKey = "PartToggles/btt_Sparky_test_fire_mode2_FaTarg"
+				Mode = 2
+				ButtonSprite
+				{
+					Texture
+					{
+						File = "toggle_fire_at_target.png"
+						MipLevels = 2
+						SampleMode = Linear
+					}
+				}
+			}
+		]
 	}
 ]

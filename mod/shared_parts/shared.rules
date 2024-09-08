@@ -10,4 +10,5 @@ Parts
 	//********** Factories ********
 	&<factories/factory_antimatter/factory_antimatter.rules>/Part
 	&<factories/factory_torpedo/factory_torpedo_parts.rules>/Part
+	&<factories/factory_transphasic_torpedo/factory_transphasic_torpedo_parts.rules>/Part
 ]

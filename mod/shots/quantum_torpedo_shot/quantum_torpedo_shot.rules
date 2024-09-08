@@ -6,7 +6,7 @@ IdealRange
 	{ BaseValue=320; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=360; }
 ]
 IdealRadius = [5, 50]
-Speed = { BaseValue=40; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=60; }
+Speed = { BaseValue=50; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=60; }
 
 Components
 {
@@ -20,7 +20,7 @@ Components
 	Homing
 	{
 		Type = TargetHoming
-		TurnVelocity = 240d
+		TurnVelocity = 10d
 		Delay = .1
 		AvoidanceRaycastDistance = 250
 		VelocityCompensation = 60%
@@ -34,7 +34,7 @@ Components
 	Acceleration
 	{
 		Type = Acceleration
-		Acceleration = 65
+		Acceleration = 90
 	}
 
 	NegativeAcceleration
@@ -48,7 +48,7 @@ Components
 	DeathByLifetime
 	{
 		Type = DeathByLifetime
-		Lifetime = 15
+		Lifetime = 30
 		HasTarget = true
 	}
 
@@ -69,7 +69,7 @@ Components
 	DamagePool
 	{
 		Type = DamagePool
-		Damage = { BaseValue=10000; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=18000; }
+		Damage = { BaseValue=15000; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=18000; }
 	}
 
 	Hit
@@ -90,8 +90,9 @@ Components
 			HitEffects
 			[
 				{
-					Type = Damage
-					Damage = { BaseValue=10000; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=18000; }
+					Type = ExplosiveDamage
+					TotalDamage = { BaseValue=25000; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=32000; }
+					Radius = 2
 				}
 				{
 					Type = Impulse
@@ -109,9 +110,10 @@ Components
 			HitEffects
 			[
 				{
-					Type = Damage
-					Damage = 0
+					Type = ExplosiveDamage
+					TotalDamage = 10000
 					DamagePool = DamagePool
+					Radius = 5
 				}
 				{
 					Type = Impulse;
@@ -147,8 +149,9 @@ Components
 			HitEffects
 			[
 				{
-					Type = Damage
-					Damage = { BaseValue=2000; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=10000; }
+					Type = ExplosiveDamage
+					TotalDamage = { BaseValue=2000; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=10000; }
+					Radius = 2
 				}
 				{
 					Type = Impulse;
@@ -177,10 +180,11 @@ Components
 			HitEffects
 			[
 				{
-					Type = Damage
-					Damage = { BaseValue=1000; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=1800; }
+					Type = ExplosiveDamage
+					TotalDamage = { BaseValue=4000; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=1800; }
 					DamagePool = DamagePool
 					DoPooledDamageFirst = true
+					Radius = 3
 				}
 				{
 					Type = Impulse

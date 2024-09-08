@@ -28,6 +28,15 @@ Parts
     Phaser_Bank_Modular = "Phaser Bank"
     Phaser_Bank_Modular_Icon = "Phaser Bank"
     Phaser_Bank_Modular_Desc = "Phaser Bank beam weapon with numerous emitters that allows it to fire in a 180°-45° arc. IN DEVELOPMENT"
+	Burst_Phaser_Bank_PD = "Multi-Emitter Phaser Bank PD"
+	Burst_Phaser_Bank_PD_Icon = "Multi-Emitter Phaser Bank"
+	Burst_Phaser_Bank_PD_Desc = "Multi-Emitter Phaser Bank for eliminating fast moving projectiles such as HE."
+	Burst_Phaser_Bank_COM = "Multi-Emitter Combat Phaser Bank"
+	Burst_Phaser_Bank_COM_Icon = "Multi-Emitter Combat Phaser Bank"
+	Burst_Phaser_Bank_COM_Desc = "Multi-Emitter Phaser Bank Adapted for combat"
+	Phaser_Lance = "Phaser Lance"
+	Phaser_Lance_Icon = "Phaser Lance"
+	Phaser_Lance_Desc = "The Ultimate Phaser"
     // Rooms
 	Captains_Room = "Captain's Ready Room"
 	Captains_Room_Icon = "Ready Room"
@@ -97,6 +106,8 @@ Inputs
 		torpedo_type_quantum_ai = "Launcher: Quantum Torpedos"
 		torpedo_type_tricobalt_ai = "Launcher: Tricobalt Torpedos"
 		torpedo_type_mine_ai = "Launcher: Cloaked Mines"
+		torpedo_type_transphasic = "Launcher: Transphasic Torpedos"
+		torpedo_type_transphasic_ai = "Launcher: Transphasic Torpedos"
 		cid_CoreShield_XS = "Nova class shield"
 		cid_CoreShield_S = "Miranda class shield"
 		cid_CoreShield_M = "Intrepid class shield"
@@ -107,6 +118,12 @@ Inputs
 		phaser_arc_45	= "45° Firearc"
 		fire_left	= "Fire to the left"
 		fire_right	= "Fire to the right"
+		cid_Sparky_Display_On = "Visible"
+		cid_Sparky_Display_Off = "Hidden"
+		cid_Sparky_test_fire_mode2_faw = "Fire At Will"
+		cid_Sparky_test_fire_mode2_hold = "Hold Fire"
+		cid_Sparky_test_fire_mode2_auto = "Auto Fire"
+		cid_Sparky_test_fire_mode2_FaTarg = "Fire At Target"
 	}
 }
 
@@ -115,6 +132,7 @@ PartToggles
 	TorpedoType_Photon = "Photon Torpedo Launcher"
 	TorpedoType_Quantum = "Quantum Torpedo Launcher"
 	TorpedoType_Tricobalt = "Tricobalt Torpedo Launcher"
+	TorpedoType_Transphasic = "Transphasic Torpedo Launcher"
 	TorpedoType_Mine = "Cloaked Mine Launcher"
 	
 	btt_CoreShield_XS = "Small shield, best suited for ships like Nova classes"
@@ -129,6 +147,13 @@ PartToggles
 
 	Fire_Left_Tooltip	= "Fire to the left (Based on Part direction)"
 	Fire_Right_Tooltip	= "Fire to the right (Based on Part direction)"
+
+	btt_Sparky_Display_On = "Visible"
+	btt_Sparky_Display_Off = "Hidden"
+	btt_Sparky_test_fire_mode2_faw = "Fire At Will"
+	btt_Sparky_test_fire_mode2_hold = "Hold Fire"
+	btt_Sparky_test_fire_mode2_auto = "Auto Fire"
+	btt_Sparky_test_fire_mode2_FaTarg = "Fire At Target"
 }
 
 Stats
@@ -142,5 +167,7 @@ StatCategories
 	TorpedoLauncher = "Torpedo Launcher"
 	QuantumTorpedoLauncher = "Quantum Torpedo Launcher"
 	TricobaltTorpedoLauncher = "Tricobalt Torpedo Launcher"
+	TransphasicTorpedoLauncher = "Transphasic Torpedo Launcher"
 	Weapon = "Weapon"
+	PhaserLance = "Phaser Lance"
 }

@@ -162,6 +162,19 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			IncludeInBlueprints = true
 			Components = &<tricobalt_torpedo/launcher_tricobalt_torpedo_ai.rules>/Components
 		}
+		TransphasicTorpedoToggle
+		{
+			Type = ModeToggle
+			Mode = TorpedoType
+			OnMode = 3
+		}
+		TransphasicTorpedoComponents
+		{
+			Type = ToggledComponents
+			Toggle = TransphasicTorpedoToggle
+			IncludeInBlueprints = true
+			Components = &<transphasic_torpedo/launcher_transphasic_torpedo_ai.rules>/Components
+		}
 		
 		MineToggle
 		{
@@ -487,6 +500,19 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				Mode = 2
 			}
 		}
+		BlueprintsTransphasic
+		{
+			Type = BlueprintSprite
+			File = "blueprints_transphasic_torpedo.png"
+			Size = [2, 4]
+			Offset = [0, 0]
+
+			ShowOnlyInToggleMode
+			{
+				ToggleID = "torpedo_type_ai"
+				Mode = 3
+			}
+		}
 		BlueprintsMine
 		{
 			Type = BlueprintSprite
@@ -508,6 +534,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		PhotonTorpedoCapacity = 3
 		QuantumTorpedoCapacity = 2
 		TricobaltTorpedoCapacity = 1
+		TransphasicTorpedoCapacity = 1
 
 		RecCrew = (&CrewRequired) + (&<./Data/ships/terran/missile_launcher/he/missile_launcher_he.rules>/MissileStats/Stats/ROF) * (&<./Data/ships/terran/missile_launcher/he/missile_launcher_he.rules>/MissileStats/Stats/MissileParts) * 4
 	}

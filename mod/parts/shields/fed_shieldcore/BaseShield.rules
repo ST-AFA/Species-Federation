@@ -2,6 +2,8 @@ Part
 {
 	Components
 	{
+		
+
 		BaseArcShield
 		{
 			Type = ArcShield
@@ -13,6 +15,7 @@ Part
 			ResourceDrainPerDamage = .2
 			Rotation = -90d
 			Location = [2, 2]
+			// DoodadToggle = ShieldVisibilityToggle
 
 			BlueprintArcSprite
 			{
@@ -174,6 +177,7 @@ Part
 			Location = [2.2, 0]
 			OperationalToggle = FrontIsOperational
 			ParentToShip = true
+			// Toggle = ShieldVisibilityToggle
 			MediaEffects
 			[
 				{
@@ -262,5 +266,12 @@ Part
 				}
 			]
 		}
+		// ShieldVisibilityToggle
+		// {
+		// 	Type = UIToggle
+		// 	ToggleID = "shield_visibility"
+		// 	Default = 0
+		// 	RequiresCommand = false
+		// }
 	}
 }

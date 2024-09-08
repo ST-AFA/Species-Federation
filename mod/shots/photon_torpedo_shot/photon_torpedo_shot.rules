@@ -63,19 +63,32 @@ Components
 	{
 		Type = Targetable
 		Health = 125
-		TargetCategory = "laser"
+		TargetCategory = "stafa_torpedo"
+		OnDeath = &../Hit/HitOperational
 	}
 
 	Hit
 	{
-		Type = PenetratingHit
+		Type = SimpleHit
 		SourcePartCollisionDelay = 1.5/30
 		FactorEffectsWith = Targetable
 
 		CrewCollisions = {Enemies=true; Junk=true}
 		HitCrew = &HitOperational
 
-		HitShield = &HitOperational
+		HitShield
+		{
+			HitEffects
+			[
+				: ../../HitOperational/HitEffects/0
+				{
+					Amount = 5000
+					TreatShieldAsPart = true
+				}
+			]
+
+			MediaEffects = &../HitOperational/MediaEffects
+		}
 		HitOperational
 		{
 			Offset = [-0.15, 0]
@@ -83,9 +96,9 @@ Components
 			HitEffects
 			[
 				{
-					Type = Damage
-					Damage = 11250
-					Radius = 4
+					Type = ExplosiveDamage
+					TotalDamage = 10000
+					Radius = 2
 				}
 				{
 					Type = Impulse;
@@ -119,8 +132,9 @@ Components
 			HitEffects
 			[
 				{
-					Type = Damage
-					Damage = 200
+					Type = ExplosiveDamage
+					TotalDamage = 200
+					Radius = 2
 				}
 				{
 					Type = Impulse;
