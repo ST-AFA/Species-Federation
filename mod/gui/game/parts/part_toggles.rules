@@ -323,7 +323,7 @@ PartToggles
 	}
 		//Toggle Shield Visibility?
 	{
-		ToggleID = "Sparky_ToggleID_Display"
+		ToggleID = "shield_visibility"
 		Style = CycledButton
 		ShowWithShipCommands = true
 		//MultipleModesDisplayOrder = Last
@@ -331,8 +331,8 @@ PartToggles
 		Choices
 		[
 			{
-				ChoiceID = "cid_Sparky_Display_On"
-				ButtonToolTipKey = "PartToggles/btt_Sparky_Display_On"
+				ChoiceID = "shield_visibility_on"
+				ButtonToolTipKey = "PartToggles/Shield_Visibility_On"
 				Mode = 0
 				ButtonSprite
 				{
@@ -346,8 +346,8 @@ PartToggles
 			}
 
 			{
-				ChoiceID = "cid_Sparky_Display_Off"
-				ButtonToolTipKey = "PartToggles/btt_Sparky_Display_Off"
+				ChoiceID = "shield_visibility_off"
+				ButtonToolTipKey = "PartToggles/Shield_Visibility_Off"
 				Mode = 1
 				ButtonSprite
 				{
