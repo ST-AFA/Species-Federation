@@ -6,7 +6,7 @@ IdealRange
 	{ BaseValue=200; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=360; }
 ]
 IdealRadius = [5, 50]
-Speed = { BaseValue=20; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=20; }
+Speed = { BaseValue=25; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=20; }
 
 Components
 {
@@ -21,7 +21,7 @@ Components
 	{
 		Type = TargetHoming
 		TurnVelocity = 145d
-		Delay = .1
+		Delay = 0.1
 		AvoidanceRaycastDistance = 250
 		VelocityCompensation = 60%
 	}
@@ -34,7 +34,7 @@ Components
 	Acceleration
 	{
 		Type = Acceleration
-		Acceleration = 8
+		Acceleration = 15
 	}
 
 	NegativeAcceleration

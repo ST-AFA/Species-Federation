@@ -6,7 +6,7 @@ IdealRange
 	{ BaseValue=320; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=360; }
 ]
 IdealRadius = [5, 50]
-Speed = { BaseValue=40; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=60; }
+Speed = { BaseValue=50; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=60; }
 
 Components
 {
@@ -17,24 +17,24 @@ Components
 		Density = 0.1
 	}
 
-	// Homing
-	// {
-	// 	Type = TargetHoming
-	// 	TurnVelocity = 240d
-	// 	Delay = .1
-	// 	AvoidanceRaycastDistance = 250
-	// 	VelocityCompensation = 60%
-	// }
+	Homing
+	{
+		Type = TargetHoming
+		TurnVelocity = 10d
+		Delay = .1
+		AvoidanceRaycastDistance = 250
+		VelocityCompensation = 60%
+	}
 
-	// Retarget
-	// {
-	// 	Type = SameShipRetarget
-	// }
+	Retarget
+	{
+		Type = SameShipRetarget
+	}
 
 	Acceleration
 	{
 		Type = Acceleration
-		Acceleration = 85
+		Acceleration = 90
 	}
 
 	NegativeAcceleration
@@ -48,7 +48,7 @@ Components
 	DeathByLifetime
 	{
 		Type = DeathByLifetime
-		Lifetime = 15
+		Lifetime = 30
 		HasTarget = true
 	}
 
@@ -91,7 +91,7 @@ Components
 			[
 				{
 					Type = ExplosiveDamage
-					TotalDamage = { BaseValue=12500; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=18000; }
+					TotalDamage = { BaseValue=25000; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=32000; }
 					Radius = 2
 				}
 				{

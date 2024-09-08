@@ -76,7 +76,19 @@ Components
 		CrewCollisions = {Enemies=true; Junk=true}
 		HitCrew = &HitOperational
 
-		HitShield = &HitOperational
+		HitShield
+		{
+			HitEffects
+			[
+				: ../../HitOperational/HitEffects/0
+				{
+					Amount = 5000
+					TreatShieldAsPart = true
+				}
+			]
+
+			MediaEffects = &../HitOperational/MediaEffects
+		}
 		HitOperational
 		{
 			Offset = [-0.15, 0]
