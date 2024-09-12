@@ -305,7 +305,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			FuelStorage = HyperiumStorage
 			SpinDownDuration = 5
 			JumpEfficiency = 80%
-			JumpEfficiencyDistanceRange = [10, 45]
+			JumpEfficiencyDistanceRange = [15, 50]
 
 			JumpOutMediaEffects
 			[
@@ -673,9 +673,9 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 
 			MediaEffects
 			[
-				&<./Data/ships/terran/reactor_large/particles/reactor_explode_large.rules>
-				&<./Data/ships/terran/reactor_large/particles/reactor_explode_flash_large.rules>
-				&<./Data/ships/terran/reactor_large/particles/reactor_shockwave_large.rules>
+				&<boom/reactor_explode_large.rules>
+				&<boom/reactor_explode_flash_large.rules>
+				&<boom/reactor_shockwave_large.rules>
 				&<./Data/common_effects/particles/explosions/huge_part_explode_debris.rules>
 				&<./Data/common_effects/particles/explosions/huge_part_explode_smoke.rules>
 
@@ -698,10 +698,10 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			[
 				{
 					Type = ExplosiveDamage
-					TotalDamage = 2000000
-					Radius = 50
+					TotalDamage = 2500000
+					Radius = 62
 					Delay = .05
-					ExpandDuration = .35
+					ExpandDuration = .8
 					ExpandStartRadius = 6
 					ExpandLoss = 50%
 					FireChancePerNDamage = 100%

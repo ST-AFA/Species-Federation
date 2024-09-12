@@ -5,9 +5,9 @@ IdealRange
 	{ BaseValue=560; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=20; }
 	{ BaseValue=585; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=210; }
 ]
-Width = 10
-Duration = 5
-HitInterval = .1
+Width = 12
+Duration = 1
+HitInterval = .01
 SourceShipLowCollisions = false
 // CrewCollisions = {Enemies=true; Junk=true}
 
@@ -72,8 +72,8 @@ BeamMediaEffects
 			}
 			Shader = "./Data/common_effects/fancy_beam_light.shader"
 			Size = [100%, 8]
-			_extraBeginLength = (&Size/1) / 2
-			_extraEndLength = (&Size/1) / 2
+			_extraBeginLength = 7
+			_extraEndLength = 7
 			VertexColor = [255, 255, 0, 255]
 			_z = 0.1
 			_litReflectiveStrength = 8
@@ -123,7 +123,7 @@ HitShield
 	[
 		{
 			Type = Damage
-			Damage = 15000
+			Damage = 1500000
 		}
 	]
 
@@ -149,8 +149,14 @@ HitOperational
 	HitEffects
 	[
 		{
-			Type = Damage
-			Damage = 14500
+			Type = ExplosiveDamage
+			TotalDamage = 1500000000
+			Radius = 10
+			ExpandDuration = 0.01
+			ExpandStartRadius = 6
+			ExpandLoss = 50%
+			FireChancePerNDamage = 35%
+			NDamage = 1000
 		}
 		{
 			Type = Impulse;
@@ -186,7 +192,7 @@ HitStructural
 	[
 		{
 			Type = Damage
-			Damage = 5000
+			Damage = 5000000
 		}
 		{
 			Type = Impulse;

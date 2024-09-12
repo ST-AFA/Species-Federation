@@ -564,9 +564,9 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 
 			MediaEffects
 			[
-				&<./Data/ships/terran/reactor_large/particles/reactor_explode_large.rules>
-				&<./Data/ships/terran/reactor_large/particles/reactor_explode_flash_large.rules>
-				&<./Data/ships/terran/reactor_large/particles/reactor_shockwave_large.rules>
+				&<boom/reactor_explode_large.rules>
+				&<boom/reactor_explode_flash_large.rules>
+				&<boom/reactor_shockwave_large.rules>
 				&<./Data/common_effects/particles/explosions/huge_part_explode_debris.rules>
 				&<./Data/common_effects/particles/explosions/huge_part_explode_smoke.rules>
 
@@ -589,10 +589,10 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			[
 				{
 					Type = ExplosiveDamage
-					TotalDamage = 1200000
-					Radius = 32
+					TotalDamage = 1600000
+					Radius = 46
 					Delay = .05
-					ExpandDuration = .35
+					ExpandDuration = .8
 					ExpandStartRadius = 6
 					ExpandLoss = 50%
 					FireChancePerNDamage = 100%

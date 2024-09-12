@@ -215,16 +215,16 @@ Components
 			{
 				Texture
 				{
-					File = "transphasic_torpedo_shot.png"
+					File = "transphas.png"
 					SampleMode = Linear
 					MipLevels = max
 				}
 				Size = [2, 2]
 			}
-			FrameCount = 8
-			FrameSize = [128, 128]
-			FramesPerRow = 2
-			FramesPerSecond = 60
+			FrameCount = 16
+			FrameSize = [512, 413]
+			// FramesPerRow = 1
+			FramesPerSecond = 120
 		}
 	}
 
