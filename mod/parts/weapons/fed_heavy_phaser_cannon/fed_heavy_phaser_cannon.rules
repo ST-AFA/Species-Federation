@@ -7,10 +7,10 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	DescriptionKey = "Parts/Heavy_Phaser_Cannon_Desc"
 	Resources
 	[
-		[steel, 124]
-		[coil, 36]
-		[coil2, 12]
-		[tristeel, 24]
+		[steel, 248]
+		[coil, 72]
+		[coil2, 24]
+		[tristeel, 48]
 	]
 	TypeCategories = [weapon, uses_power, is_crewed]
 	ReceivableBuffs : ^/0/ReceivableBuffs [CaptainsRoomBuff, AntimatterPower]
@@ -261,7 +261,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			OperationalToggle = IsOperational
 			AutoFireToggle = AutoFireToggle
 			//FireInterval = 2/30
-			FireInterval = 8
+			FireInterval = 15
 			FiringArc = 45d
 			RotateSpeed = 360d
 			FireThresholdAngle = 1d
@@ -307,11 +307,11 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			OperationalToggle = IsOperational
 			AutoFireToggle = AutoFireToggle
 			//FireInterval = 2/30
-			FireInterval = 8
-			FiringArc = 45d
-			RotateSpeed = 360d
+			FireInterval = 15
+			FiringArc = 40d
+			RotateSpeed = 10d
 			FireThresholdAngle = 1d
-			AIFirepowerRating = 600
+			AIFirepowerRating = 2000
 			FirePermissionToggle = FireModeToggle
 			// AutoTargetCrewSafetyDist = 8
 			IgnoreJunkLOSChecks = true
@@ -362,9 +362,9 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			Location = [0.5, 0]
 			OperationalToggle = IsOperational
 			// Spread = [-1.5d, 1.5d]
-			FireDelay = .2
+			FireDelay = 1
 			Burst = 4
-					BurstDelay = 1.2
+					BurstDelay = 2.4
 					UseResourcePerShotInBurst = true
 			Bullet = &<../../../shots/heavy_phaser_bolt/heavy_phaser_bolt.rules>
 			ResourceStorage = BatteryStorage
