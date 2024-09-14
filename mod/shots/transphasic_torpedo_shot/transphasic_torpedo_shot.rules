@@ -34,7 +34,7 @@ Components
 	Acceleration
 	{
 		Type = Acceleration
-		Acceleration = 15
+		Acceleration = 60
 	}
 
 	NegativeAcceleration
@@ -48,7 +48,7 @@ Components
 	DeathByLifetime
 	{
 		Type = DeathByLifetime
-		Lifetime = 15
+		Lifetime =30 
 		HasTarget = true
 	}
 
@@ -62,7 +62,7 @@ Components
 	Targetable
 	{
 		Type = Targetable
-		Health = 150
+		Health = 1000
 		TargetCategory = "laser"
 	}
 

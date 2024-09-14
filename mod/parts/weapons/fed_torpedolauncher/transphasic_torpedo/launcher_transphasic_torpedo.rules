@@ -39,11 +39,11 @@ Components
 		OperationalToggle = IsOperational
 		AutoFireToggle = AutoFireToggle
 		FireInterval = 0 // Uses common reload timer.
-		FiringArc = 0d
+		FiringArc = 10d
 		TargetingArc = 10d
 		ValidArc = 10d
 		FireThresholdAngle = (&TargetingArc) / 2
-		RotateSpeed = 0d
+		RotateSpeed = 10d
 		AllowFireWithBlockedLOS = true
 		AIFirepowerRating = 6200
 		FirePermissionToggle = FirePermissionToggle
