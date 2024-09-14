@@ -16,7 +16,7 @@ Parts
 	&<weapons/fed_heavy_phaser_cannon/fed_heavy_phaser_cannon.rules>/Part
 	&<weapons/fed_def_dual_phaser_cannon/fed_def_dual_phaser_cannon.rules>/Part
 	&<weapons/fed_standardtorpedolauncher/fed_standard_torpedo_launcher_deck.rules>/Part
-	&<weapons/fed_phaserlance2/fed_phaserlance2.rules>/Part
+	// &<weapons/fed_phaserlance2/fed_phaserlance2.rules>/Part
 
 	//&<weapons/fed_phaserbank_modular/fed_phaserbank_modular.rules>/Part
 	//&<weapons/fed_phaserbank_emitter/fed_phaserbank_emitter.rules>/Part
