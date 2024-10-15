@@ -589,7 +589,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			[
 				{
 					Type = ExplosiveDamage
-					TotalDamage = 325000000
+					TotalDamage = 3250000
 					Radius = 62
 					Delay = .05
 					ExpandDuration = .08
@@ -607,7 +607,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				}
 				{
 					Type = ExplosiveDamage
-					TotalDamage = 22500000
+					TotalDamage = 225000
 					Radius = 52
 					Delay = .05
 					ExpandDuration = .07

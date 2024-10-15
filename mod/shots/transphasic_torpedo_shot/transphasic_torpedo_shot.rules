@@ -73,11 +73,11 @@ Components
 		// FactorEffectsWith = Targetable
 		// Penetration = 25
 		// PenetratesCrew = true
-		Penetration = 80
+		Penetration = 999999999999999999999999999999999999999999999999
 		PenetratesOperational = false
 		HitShield
 		{
-			ReduceEffectsByPenetration = true
+			//ReduceEffectsByPenetration = true
 
 			HitEffects
 			[
