@@ -116,7 +116,7 @@ BeamMediaEffects
 	}
 
 ]
-
+// this will be updated to be penetrating when beams can get penetration (then I can work on polaron weapons :D )
 HitShield
 {
 	HitEffects

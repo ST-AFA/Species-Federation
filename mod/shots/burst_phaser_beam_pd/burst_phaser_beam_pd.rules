@@ -12,6 +12,8 @@ ClipRangeToTarget = true
 
 HitNothing
 {
+	CrewCollisions = {Enemies=true; Junk=true}
+	HitCrew = &HitNothing
 	HitEffects
 	[
 		{
@@ -25,6 +27,7 @@ HitNothing
 				Shields = false
 				Bullets = true
 				OnlyBulletCategories = [missile, mine, bullet, stafa_torpedo]
+				Crew = true 
 			}
 		}
 	]

@@ -280,10 +280,11 @@ WeaponBase
 	Rotation = -90d
 	OperationalToggle = IsOperational
 	AutoFireToggle = AutoFireToggle
+	IgnoreSourceShipLowLOSChecks = true
 	FireInterval = 0 // Uses common reload timer.
-	FiringArc = 0d;
-	ValidArc = 360d;
-	FireThresholdAngle = 180d;
+	FiringArc = 45d;
+	ValidArc = 45d;
+	FireThresholdAngle = 45d;
 	RotateSpeed = 0d
 	AllowFireWithBlockedLOS = true
 	AIFirepowerRating = 1600

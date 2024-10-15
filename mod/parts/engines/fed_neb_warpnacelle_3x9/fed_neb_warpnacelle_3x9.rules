@@ -5,6 +5,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	ID = "stafa.fed_neb_warpnacelle_3x9" // Part IDs must always be in the form of "author_name.part_name". If making your own mod, do *not* use "cosmoteer" as your author name, because it may conflict with future vanilla parts.
 	EditorGroup = "Starfleet"
 	DescriptionKey = "Parts/NebWarpnacelle_3x9_Desc"
+	IsBuildable = false
 	Resources
 	[
 		[steel, 1248]
@@ -41,7 +42,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	ThrustIncreaseTime = 8
 	ThrustRecoveryTime = 6
 	FuelUsage = 1500
-	ReceivableBuffs : ^/0/ReceivableBuffs [Engine, AntimatterPower]
+	ReceivableBuffs : ^/0/ReceivableBuffs [Engine, AntimatterPower, EnginePowerDistribution]
 	BlockedTravelCells
 	[
 		[0, 1]

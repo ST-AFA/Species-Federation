@@ -37,11 +37,11 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		[default, [-2, 7, 1, 4]]	// bottom left
 		[default, [-1, 11, 4, 1]]	// bottom
 	]
-	ThrusterForce = 16000
+	ThrusterForce = 22500
 	ThrustIncreaseTime = 6
 	ThrustRecoveryTime = 4
 	FuelUsage = 400
-	ReceivableBuffs : ^/0/ReceivableBuffs [Engine, AntimatterPower]
+	ReceivableBuffs : ^/0/ReceivableBuffs [Engine, AntimatterPower, EnginePowerDistribution]
 	BlockedTravelCells
 	[
 		[0, 1]

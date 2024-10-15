@@ -27,6 +27,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	Radius_M = 35
 	Radius_L = 45
 	Radius_XL = 60
+	
 	BlockedTravelCells
 	[
 		[1, 1]

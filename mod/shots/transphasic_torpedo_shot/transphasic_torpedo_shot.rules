@@ -68,14 +68,13 @@ Components
 
 	Hit
 	{
-		Type = SimpleHit
+		Type = PenetratingHit
 		SourcePartCollisionDelay = 1.5/30
 		// FactorEffectsWith = Targetable
 		// Penetration = 25
 		// PenetratesCrew = true
-		CrewCollisions = {Enemies=true; Junk=true}
-		HitCrew = &HitOperational
-
+		Penetration = 80
+		PenetratesOperational = false
 		HitShield
 		{
 			ReduceEffectsByPenetration = true
@@ -84,8 +83,8 @@ Components
 			[
 				: ../../HitOperational/HitEffects/0
 				{
-					Amount = 900
-					TreatShieldAsPart = true
+					Amount = 0
+					TreatShieldAsPart = false
 				}
 			]
 
@@ -103,11 +102,11 @@ Components
 					// Radius = 8
 					Type = ExplosiveDamage
 					TotalDamage = 30000000
-					Radius = 48
-					ExpandDuration = 5
-					ExpandStartRadius = 2
+					Radius = 128
+					ExpandDuration = 0.05
+					ExpandStartRadius = 12
 					ExpandLoss = 50%
-					ImpulsePerNDamage = 20
+					ImpulsePerNDamage = 5
 					NDamage = 1000
 					Filter
 					{
@@ -120,12 +119,12 @@ Components
 					// Type = Impulse;
 					// Impulse = 600;
 					Type = ExplosiveDamage
-					TotalDamage = 30000000
-					Radius = 48
-					ExpandDuration = 5
-					ExpandStartRadius = 2
+					TotalDamage = 300000
+					Radius = 114
+					ExpandDuration = 0.05
+					ExpandStartRadius = 12
 					ExpandLoss = 50%
-					ImpulsePerNDamage = 10
+					ImpulsePerNDamage = 5
 					NDamage = 1000
 					Filter
 					{
@@ -215,7 +214,7 @@ Components
 			{
 				Texture
 				{
-					File = "transphas.png"
+					File = "transphas2.png"
 					SampleMode = Linear
 					MipLevels = max
 				}

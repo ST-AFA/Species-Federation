@@ -33,11 +33,11 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		[default, [-2, 4, 1, 5]]	// bottom left
 		[default, [-1, 9, 5, 1]]	// bottom
 	]
-	ThrusterForce = 12000
+	ThrusterForce = 27000
 	ThrustIncreaseTime = 5
 	ThrustRecoveryTime = 3
 	FuelUsage = 300
-	ReceivableBuffs : ^/0/ReceivableBuffs [Engine, AntimatterPower]
+	ReceivableBuffs : ^/0/ReceivableBuffs [Engine, AntimatterPower, Nacelle, NacelleThrust, EnginePowerDistribution]
 	BlockedTravelCells
 	[
 		[0, 1]
@@ -72,6 +72,13 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	}
 	Components : ^/0/Components
 	{
+		ThrustBuffProvider
+		{
+			Type = SelfBuffProvider
+			BuffType = NacelleThrust
+			ChainsFromBuffType = Nacelle
+			BuffAmount = { BaseValue=1; BuffType=Nacelle; BuffMode=Add; }
+		}
 		IsOperational
 		{
 			Type = MultiToggle
