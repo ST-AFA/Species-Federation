@@ -39,10 +39,10 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	// 	[default, [-2, 8, 1, 4]]	// bottom left
 	// 	[default, [-1, 12, 5, 1]]	// bottom
 	// ]
-	ThrusterForce = 1//7500
-	ThrustIncreaseTime = 0//4
-	ThrustRecoveryTime = 0//2
-	FuelUsage = 0 //1000
+	ThrusterForce = 7500
+	ThrustIncreaseTime = 4
+	ThrustRecoveryTime = 2
+	FuelUsage = 100
 	ReceivableBuffs : ^/0/ReceivableBuffs [Engine, AntimatterPower, Nacelle, NacelleOperation, NacelleBatteryConnection]
 	// BlockedTravelCells
 	// [
@@ -95,17 +95,14 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		{
 			Type = AreaBuffProvider
 			BuffType = Nacelle
-			BuffAmount = { BaseValue=1; BuffType=Nacelle; BuffMode=Add; }
+			BuffAmount = { BaseValue=0; BuffType=Nacelle; BuffMode=Add; }
 			BuffArea = [0, 3, 3, 1]
 			OperationalToggle = IsOperational
 			ChainsFromBuffType = Nacelle
 			Criteria
 			{
 			//	IDs = [stafa.fed_warpnacelle_extension_3x3, stafa.fed_warpnacelle_3x6, stafa.fed_warpnacelle_3x9]
-				Rot = 0
-				Left = 0
-				Right = 3
-				Top = 2
+				Top = 3
 			}
 		}
 		EngineBuffProvider
@@ -134,7 +131,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				Rot = 0
 				Left = 0
 				Right = 3
-				Top = 2
+				Bottom = 0
 			}
 		}
 		IsConnected
@@ -150,11 +147,8 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			ComponentID = IsConnected
 			PartCriteria
 			{
-				IDs = [stafa.fed_warpnacelle_extension_3x3, stafa.fed_warpnacelle_3x9]
-				Rot = 0
-				Left = 0	 
-				Right = 3
-				Top = 2
+				IDs = [stafa.fed_warpnacelle_extension_3x3, stafa.fed_warpnacelle_3x9, stafa.fed_warpnacelle_3x6]
+				Top = 3
 			}
 		}
 		IsOperational
@@ -500,7 +494,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			OperationalToggle = IsOperational
 			Force = &../../ThrusterForce
 			MinActivation = -0.05
-			MaxActivation = { BaseValue=1; BuffType=Engine; BuffMode=Multiply; }
+			MaxActivation = { BaseValue=1; BuffType=NacelleThrust; BuffMode=Multiply; }
 			MinUncommandedActivation = &MinActivation
 			MaxUncommandedActivation = &MaxActivation
 			ActivationIncreaseTime = &../../ThrustIncreaseTime
@@ -517,7 +511,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			OperationalToggle = IsOperational
 			Force = &../../ThrusterForce
 			MinActivation = 0
-			MaxActivation = { BaseValue=1; BuffType=Engine; BuffMode=Multiply; }
+			MaxActivation = { BaseValue=1; BuffType=NacelleThrust; BuffMode=Multiply; }
 			MinUncommandedActivation = &MinActivation
 			MaxUncommandedActivation = &MaxActivation
 			ActivationIncreaseTime = &../../ThrustIncreaseTime
@@ -534,7 +528,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			OperationalToggle = IsOperational
 			Force = &../../ThrusterForce
 			MinActivation = 0
-			MaxActivation = { BaseValue=1; BuffType=Engine; BuffMode=Multiply; }
+			MaxActivation = { BaseValue=1; BuffType=NacelleThrust; BuffMode=Multiply; }
 			MinUncommandedActivation = &MinActivation
 			MaxUncommandedActivation = &MaxActivation
 			ActivationIncreaseTime = &../../ThrustIncreaseTime
@@ -551,7 +545,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			OperationalToggle = IsOperational
 			Force = &../../ThrusterForce
 			MinActivation = -0.05
-			MaxActivation = { BaseValue=1; BuffType=Engine; BuffMode=Multiply; }
+			MaxActivation = { BaseValue=1; BuffType=NacelleThrust; BuffMode=Multiply; }
 			MinUncommandedActivation = &MinActivation
 			MaxUncommandedActivation = &MaxActivation
 			ActivationIncreaseTime = &../../ThrustIncreaseTime
