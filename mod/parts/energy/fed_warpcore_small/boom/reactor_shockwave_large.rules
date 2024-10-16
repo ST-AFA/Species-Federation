@@ -1174,8 +1174,8 @@ Def
 		UvRectIn
 		BaseSize
 		{
-			X = 1
-			Y = 1
+			X = 1.2
+			Y = 1.2
 		}
 		Name = ""
 	}

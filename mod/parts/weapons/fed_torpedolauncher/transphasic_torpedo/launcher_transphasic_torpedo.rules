@@ -4,13 +4,13 @@ Components
 	{
 		Type = ResourceStorage
 		ResourceType = transphasic_torpedo_part
-		MaxResources = 10
-		ToggleOnResources = 10
-		ToggleOffResources = 9
-		DelayBeforeReadyToUse = 5
+		MaxResources = 20
+		ToggleOnResources = 20
+		ToggleOffResources = 19
+		DelayBeforeReadyToUse = 10
 		UITileRect = [.5 + 7/64, 1 + 7/64, 1 - 14/64, 1 - 14/64]
 		ReceiveResourceMediaEffects = &/COMMON_EFFECTS/MissileLoad
-		DropResourcesWhenDestroyed = true
+		DropResourcesWhenDestroyed = false
 		DropResourcesWhenRemoved = true
 	}
 	Consumer
@@ -22,7 +22,22 @@ Components
 		OperationalToggle = PowerToggle
 		ConsumptionToggleButtonOffset = [0, -.4]
 	}
-
+	BatteryStorage
+	{
+		Type = ResourceStorage
+		ResourceType = battery
+		MaxResources = 20000
+		ReceiveResourceMediaEffects = &/COMMON_EFFECTS/PowerDeliver
+	}
+	BatteryConsumer
+	{
+		Type = ResourceConsumer
+		ResourceType = battery
+		Storage = BatteryStorage
+		DefaultPriority = &/PRIORITIES/Weapon_Supply
+		ResupplyThreshold = 500
+		OperarionalToggle = PowerToggle
+	}
 	MissilesPrereq
 	{
 		Type = MultiToggle
@@ -101,8 +116,17 @@ Components
 		OperationalToggle = IsOperational
 		FireTrigger = Weapon
 		GetTargetFrom = Weapon
-		ResourceStorage = MissileStorage
-		ResourcesUsed = 10
+		ResourceUsage
+			[
+				{
+					ResourceStorage = MissileStorage
+					ResourcesUsed = 20
+				}
+				{
+					ResourceStorage = BatteryStorage
+					ResourcesUsed = 20000
+				}
+			]
 		Bullet = &<../../../../shots/transphasic_torpedo_shot/transphasic_torpedo_shot.rules>
 		TargetLeadPrediction = false
 		Recoil = 1500

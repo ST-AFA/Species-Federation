@@ -16,7 +16,7 @@ Parts
 	&<weapons/fed_heavy_phaser_cannon/fed_heavy_phaser_cannon.rules>/Part
 	&<weapons/fed_def_dual_phaser_cannon/fed_def_dual_phaser_cannon.rules>/Part
 	&<weapons/fed_standardtorpedolauncher/fed_standard_torpedo_launcher_deck.rules>/Part
-	&<weapons/fed_phaserlance2/fed_phaserlance2.rules>/Part
+	// &<weapons/fed_phaserlance2/fed_phaserlance2.rules>/Part
 
 	//&<weapons/fed_phaserbank_modular/fed_phaserbank_modular.rules>/Part
 	//&<weapons/fed_phaserbank_emitter/fed_phaserbank_emitter.rules>/Part
@@ -39,6 +39,7 @@ Parts
 	&<engines/fed_impulse_6x3/fed_impulse_6x3.rules>/Part
 	&<engines/fed_def_warpnacelle_1x4/fed_def_warpnacelle_1x4.rules>/Part
 	&<engines/fed_neb_warpnacelle_3x9/fed_neb_warpnacelle_3x9.rules>/Part
+	&<engines/fed_warpnacelle_extension_3x3/fed_warpnacelle_extension_3x3.rules>/Part
 	// Shields
 	&<shields/fed_shieldcore/fed_shieldcore_switch.rules>/Part
 	// Misc (basically AI Parts)

@@ -6,7 +6,7 @@ IdealRange
 	{ BaseValue=320; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=360; }
 ]
 IdealRadius = [5, 50]
-Speed = { BaseValue=50; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=60; }
+Speed = { BaseValue=100; BuffType=CaptainsRoomBuff; BuffMode=Multiply; MaxValue=120; }
 
 Components
 {
@@ -20,7 +20,7 @@ Components
 	Homing
 	{
 		Type = TargetHoming
-		TurnVelocity = 10d
+		TurnVelocity = 50d
 		Delay = .1
 		AvoidanceRaycastDistance = 250
 		VelocityCompensation = 60%
@@ -48,7 +48,7 @@ Components
 	DeathByLifetime
 	{
 		Type = DeathByLifetime
-		Lifetime = 30
+		Lifetime = 10
 		HasTarget = true
 	}
 
@@ -80,8 +80,8 @@ Components
 		PenetrationSpeed = &~/Speed
 		FactorEffectsWith = Targetable
 
-		CrewCollisions = {Enemies=true; Junk=true}
-		HitCrew = &HitOperational
+		//CrewCollisions = {Enemies=true; Junk=true}
+		//HitCrew = &HitOperational
 
 		HitShield
 		{

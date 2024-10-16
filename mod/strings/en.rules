@@ -103,6 +103,9 @@ Parts
 	NebWarpnacelle_3x9 = "Wide Warpnacelle, Long" 
 	NebWarpnacelle_3x9_Icon = "Warpnacelle 3x9"
 	NebWarpnacelle_3x9_Desc = "Delivers thrust an maneuverability to nebula class starships, You shouldn't have this"
+	Warpnacelle_Extension_3x3 = "Nacelle Extension 3"
+	Warpnacelle_Extension_3x3_Icon = "Nacelle Extension 3"
+	Warpnacelle_Extension_3x3_Desc = "Nacelle extension that provides additional thrust to large nacelles"
 							  
 	// Shields
 	ShieldCore = "Shieldcore"

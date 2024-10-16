@@ -139,7 +139,7 @@ Components
 	MissileSpritesA
 	{
 		Type = ResourceSprites
-		Location = [.7, 0]
+		Location = [.5, 1.6]
 		ResourceStorage = MissileStorageA
 		Layer = "weapons"
 		HasZeroResourceSprite = true
@@ -184,8 +184,8 @@ Components
 	DestroyedEffects
 	{
 		Type = DeathEffects
-		MediaEffects = &/COMMON_EFFECTS/BigPartDestroyed
-		Location = [1, 2]
+		MediaEffects = &/COMMON_EFFECTS/MedPartDestroyed
+		Location = [0, 2]
 
 		FactorHitEffectsWith = CombinedMissileStorage
 		HitEffects
@@ -279,48 +279,28 @@ MissileStorageBase
 
 WeaponBase
 {
-	Type = FixedWeapon // This has an arc of 0, but we don't want to use FixedWeapon because that will only shot at things directly in the LOS.
+	Type = TurretWeapon // This has an arc of 0, but we don't want to use FixedWeapon because that will only shot at things directly in the LOS.
 	Rotation = -90d
 	OperationalToggle = IsOperational
 	AutoFireToggle = AutoFireToggle
+	IgnoreSourceShipLowLOSChecks = true
 	FireInterval = 0 // Uses common reload timer.
-	// FiringArc = 1d;
-	// ValidArc = 1d;
-	// FireThresholdAngle = 1d;
-	// RotateSpeed = 0d
+	FiringArc = 45d;
+	ValidArc = 45d;
+	FireThresholdAngle = 45d;
+	RotateSpeed = 0d
 	AllowFireWithBlockedLOS = true
 	AIFirepowerRating = 1600
 	FirePermissionToggle = FirePermissionToggle
-	IgnoreSourceShipLowLOSChecks = true
 
-	AutoTarget
-			{
-				TargetType = ShipParts
-				Toggle = AutoTargetToggle
-			}
-
-			CoverageLine
-			{
-				LineSprite
-				{
-					Texture = &/INDICATORS/RadialGradient
-					VertexColor = [255, 255, 255, 191]
-					UVRect = [.5, 0, 0, 1]
-				}
-				LineThickness = 2
-
-				BeginCapSprite : LineSprite
-				{
-					UVRect = [0, 0, .5, 1]
-				}
-				BeginCapSize = [1, 2]
-
-				EndCapSprite : LineSprite
-				{
-					UVRect = [.5, 0, .5, 1]
-				}
-				EndCapSize = [1, 2]
-			}
+	AutoTargets
+	[
+		{
+			TargetType = ShipParts
+			Toggle = AutoTargetToggle
+			EnableInDirectControlMode = true
+		}
+	]
 }
 
 EmitterBase
