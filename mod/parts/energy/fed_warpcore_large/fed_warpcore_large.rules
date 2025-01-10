@@ -24,7 +24,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	MaxHealth = 4000 // Deliberately not increasing this for med/large reactors to make them extra-fragile.
 	AutoDoorMaxPathLength = 5
 	TypeCategories = [reactor, ftl, is_crewed, uses_antimatter, warpcore]
-	ReceivableBuffs : ^/0/ReceivableBuffs []
+	ReceivableBuffs : ^/0/ReceivableBuffs [WarpcoreBuffLarge, WarpcoreBuffQuantityLarge, WarpcoreSubstationBuffLarge, LargeInjector]
 	CreatePartPerTileWhenDestroyed = ""
 	IgnoreRotationForMirroredSelection = true
 	BlockedTravelCells
@@ -103,13 +103,22 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			Default = 1
 			RequiresCommand = false
 		}
-		
+		IsConnected 
+		{
+			Type = ToggleProxy
+			ComponentID = PowerToggle
+		}
+		LargeInjector
+		{
+			Type = BuffToggle
+			BuffType = LargeInjector
+		}
 		BatteryProducer
 		{
 			Type = ResourceConverter
 			ToStorage = BatteryStorage
-			ToQuantity = 100
-			Interval = .5
+			ToQuantity = { BaseValue=100; BuffType=WarpcoreBuffQuantityLarge; BuffMode=Add; MaxValue=200; }
+			Interval = { BaseValue=0.5; BuffType=WarpcoreBuffLarge; BuffMode=Subtract; MinValue=0.20; }
 		}
 		BatteryStorage
 		{
@@ -134,7 +143,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			ViaBuffs
 			{
 				OutgoingBuffProviders = [BuffProvider]
-				ComponentID = BatteryStorage
+				ComponentIDs = [BatteryStorage, CombinedBatteryStorage]
 			}
 			AddMode = DistributeEvenly //PrioritizeLeastResources
 			ReceiveResourceMediaEffects = &/COMMON_EFFECTS/PowerDeliver
@@ -227,18 +236,55 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			BuffAmount = 100%
 			GridDistance = 100
 		}
+		LargeInjectorSelfBuffProvider
+		{
+			Type = SelfBuffProvider
+			BuffType = LargeInjector
+			BuffAmount = 100%
+		}
+		LargeInjectorBuffProvider
+		{
+			Type = GridBuffProvider
+			BuffType = LargeInjector
+			BuffAmount = 0
+			GridDistance = 1
+			OperationalToggle = IsOperational
+			PartCriteria
+			{
+				IDs = [stafa.aux_ma_injector_large] 
+			}
+		}
+		//EnergySubstation
+		//{
+		//	Type = ResourceConverter
+		//	FromStorage = BatteryStorage
+		//	FromQuantity = 500
+		//	ToStorage = CombinedBatteryStorage
+		//	ToQuantity = 500
+		//	Interval = { BaseValue=0.05; BuffType=WarpcoreSubstationBuffLarge; BuffMode=Subtract; MinValue=0.025; }
+		//	MinFromQuantityForConversion = 501
+		//}
 		EnergySubstation
 		{
 			Type = ResourceConverter
-			FromStorage = BatteryStorage
-			FromQuantity = 500
-			ToStorage = CombinedBatteryStorage
-			ToQuantity = 500
-			Interval = 0.05
-			MinFromQuantityForConversion = 501
+			From
+			[
+				{
+				Storage = BatteryStorage
+				Quantity = 500
+				MinQuantityForConversion = 500
+				}
+			]
+			To
+			[
+				{
+				Storage = CombinedBatteryStorage
+				Quantity = 500
+				MinQuantityForConversion = 500
+				}
+			]
+			Interval = { BaseValue=0.05; BuffType=WarpcoreSubstationBuffLarge; BuffMode=Subtract; MinValue=0.01; }
 		}
-		
-		
 		// Hyperdrive
 		HyperiumStorage
 		{

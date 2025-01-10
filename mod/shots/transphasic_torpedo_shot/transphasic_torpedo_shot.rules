@@ -214,7 +214,7 @@ Components
 			{
 				Texture
 				{
-					File = "transphas2.png"
+					File = "transphas.png"
 					SampleMode = Linear
 					MipLevels = max
 				}

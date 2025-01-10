@@ -17,7 +17,7 @@ Components
 		AutoTargetCrewSafetyDist = 8
 		IgnoreSourceShipLowLOSChecks = true
 		IgnoreJunkLOSChecks = true
-		HoldTargetWhileFiring = 0.5
+		//HoldTargetWhileFiring = 0.5
 		Emitter = BeamEmitter
 		AlwaysShowCoverage = true
 

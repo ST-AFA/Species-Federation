@@ -179,6 +179,15 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			MaxResources = 500000
 			ReceiveResourceMediaEffects = &/COMMON_EFFECTS/PowerDeliver
 		}
+		BatteryConsumer
+		{
+			Type = ResourceConsumer
+			ResourceType = battery
+			Storage = BatteryStorage
+			DefaultPriority = &/PRIORITIES/Weapon_Supply
+			ResupplyThreshold = 0
+			OperationalToggle = PowerToggle
+		}
 
 		Graphics
 		{

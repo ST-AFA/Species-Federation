@@ -48,7 +48,7 @@ Components
 	{
 		Type = ProgressBar
 		OperationalToggle = IsOperational
-		ShowProgressFor = CommonReloadTimerVeryShort
+		ShowProgressFor = CommonReloadTimerKindaShort
 		Invert = true
 	}
 
