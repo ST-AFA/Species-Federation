@@ -698,14 +698,14 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			[
 				{
 					Type = ExplosiveDamage
-					TotalDamage = 2500000
-					Radius = 62
+					TotalDamage = 5000000
+					Radius = 82
 					Delay = .05
-					ExpandDuration = .8
+					ExpandDuration = .1
 					ExpandStartRadius = 6
 					ExpandLoss = 50%
 					FireChancePerNDamage = 100%
-					ImpulsePerNDamage = 40
+					ImpulsePerNDamage = 5
 					NDamage = 1000
 					Filter
 					{
@@ -716,13 +716,13 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				}
 				{
 					Type = ExplosiveDamage
-					TotalDamage = 300000
-					Radius = 10
+					TotalDamage = 400000
+					Radius = 72
 					Delay = .05
-					ExpandDuration = .2
+					ExpandDuration = .1
 					ExpandStartRadius = 4
 					ExpandLoss = 100%
-					ImpulsePerNDamage = 5
+					ImpulsePerNDamage = 3
 					NDamage = 1000
 					Filter
 					{

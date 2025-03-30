@@ -256,7 +256,7 @@ Components
 	Indicators
 	{
 		Type = IndicatorSprites
-		Location = [0, 2]
+		Location = [0.5, 2]
 		Layer = "indicators"
 		Indicators
 		[
@@ -266,8 +266,8 @@ Components
 				AtlasSprite
 				{
 					File = &/INDICATORS/PowerOff
-					Size = [0.5, 0.5]
-					Offset = [0.5, 0]
+					Size = [0.9, 0.9]
+					//Offset = [0.5, 0]
 				}
 			}
 
@@ -278,8 +278,8 @@ Components
 				AtlasSprite
 				{
 					File =  &/INDICATORS/NoPhoton
-					Size = [0.5, 0.5]
-					Offset = [0.5, 0]
+					Size = [0.9, 0.9]
+					//Offset = [0.5, 0]
 				}
 			}
 
@@ -289,8 +289,8 @@ Components
 				AtlasSprite
 				{
 					File = &/INDICATORS/NoCrew
-					Size = [0.5, 0.5]
-					Offset = [0.5, 0]
+					Size = [0.9, 0.9]
+					//Offset = [0.5, 0]
 				}
 			}
 		]

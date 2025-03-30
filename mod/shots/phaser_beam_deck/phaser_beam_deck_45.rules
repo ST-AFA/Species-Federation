@@ -9,6 +9,7 @@ Duration = 1
 HitInterval = .1
 SourceShipLowCollisions = false
 CrewCollisions = {Enemies=true; Junk=true}
+ClipRangeToTarget = true
 
 BeamMediaEffects
 [

@@ -16,7 +16,9 @@ Description = "Adds STAR TREK stuff to the game \n\n"\
 StringsFolder = "strings"
 
 
-Actions
+Actions:
+&<adaptations.rules>/Adaptations
+
 [
 	//******************** FUNCTIONS ********************
 

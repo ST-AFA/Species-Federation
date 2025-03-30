@@ -24,7 +24,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	ThrustIncreaseTime = 0
 	ThrustRecoveryTime = 0
 	FuelUsage = 500
-	ReceivableBuffs : ^/0/ReceivableBuffs [Engine, AntimatterPower]
+	ReceivableBuffs : ^/0/ReceivableBuffs [Engine, AntimatterPower, EnginePowerDistribution]
 	ForceManhattanPathInPart = true
 	BlockedTravelCells
 	[
